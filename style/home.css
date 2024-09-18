@@ -1,0 +1,304 @@
+body {
+  background-image: url(../img/building.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.logo {
+  width: 20rem;
+}
+.card {
+  background-color: #f9de46;
+  width: 60%;
+  height: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 1%;
+  border-radius: 1rem;
+  transition: calc(0.2s);
+  animation: beat 5s infinite;
+}
+.card:hover {
+  background-color: #e7c91e;
+  box-shadow: rgba(255, 255, 255, 0.176) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.image-row {
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.card img {
+  width: 80%;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  padding-top: 8%;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal_container {
+  background: white;
+  border-radius: 1.1rem;
+  padding: 30px;
+  width: 55%;
+  margin: 0 auto;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+  text-align: justify;
+}
+
+.modal_container img {
+  display: block;
+  margin: auto;
+  width: 100px;
+}
+
+.modal_container h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.modal_container p {
+  font-size: 0.9rem;
+}
+li {
+  font-size: 0.9rem;
+}
+.last {
+  text-align: center;
+  font-weight: 500;
+}
+button.collapsible {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 0.9rem;
+  display: block;
+  font-weight: 700;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.collapsible:hover {
+  background-color: #e0d9d9;
+}
+
+.collapsible:after {
+  content: "\002B";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible.active {
+  width: 100% !important;
+  background-color: #eaeaea !important;
+  box-shadow: 0px 0px 33px 0px #dedbdb !important;
+}
+
+.active:after {
+  content: "\2212";
+  gap: 80%;
+}
+
+.membershipBtn,
+.pidpBtn,
+.motorcycleBtn {
+  display: flex;
+  text-align: center;
+}
+
+.membershipBtn a,
+.pidpBtn a,
+.motorcycleBtn a {
+  margin-left: 10px;
+}
+
+.membershipBtn a:hover,
+.pidpBtn a:hover,
+.motorcycleBtn a:hover {
+  text-decoration: none;
+}
+
+.membershipBtn .agree,
+.pidpBtn .agree,
+.motorcycleBtn .agree {
+  color: #fff;
+  font-weight: 600;
+  padding: 1% 5%;
+  background-color: rgb(52, 110, 227);
+  box-shadow: 4px 6px 3px 0px rgb(127, 169, 255);
+  border-radius: 0.5rem;
+}
+
+a .cancel {
+  margin-top: 2rem;
+}
+
+.membershipBtn .agree:hover,
+.pidpBtn .agree:hover,
+.motorcycleBtn .agree:hover {
+  background-color: rgb(86, 179, 245);
+}
+
+.membershipBtn .cancel,
+.pidpBtn .cancel,
+.motorcycleBtn .cancel {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  padding: 1% 5%;
+  background-color: rgb(227, 52, 52);
+  box-shadow: 4px 6px 3px 0px rgb(198, 114, 114);
+  border-radius: 0.5rem;
+}
+
+.membershipBtn .cancel:hover,
+.pidpBtn .cancel:hover,
+.motorcycleBtn .cancel:hover {
+  background-color: rgb(255, 112, 112);
+}
+
+.content {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+  text-align: justify;
+}
+.logo img {
+  margin-top: 5rem;
+}
+footer {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dedbdb63;
+  padding-top: 1%;
+  bottom: 0;
+}
+
+.card_logos {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .image-row {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    text-align: center;
+    padding: 0%;
+  }
+  .card_logos {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20%;
+    height: 8rem;
+  }
+  .logo {
+    width: 70%;
+  }
+  .modal_container {
+    width: 90%;
+    margin-bottom: 20%;
+  }
+  footer {
+    font-size: 0.5rem;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    padding: 0%;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .card {
+    width: 20rem;
+    margin: auto;
+    height: 20rem;
+  }
+  .logo {
+    width: 20%;
+  }
+  footer {
+    font-size: 2rem;
+    padding: 1.5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+  }
+}

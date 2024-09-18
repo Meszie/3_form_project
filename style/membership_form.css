@@ -1,0 +1,628 @@
+body {
+  background-image: url(../img/building.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Infinite Justice', sans-serif;
+  letter-spacing: 0.1cap;
+}
+
+.navbar-brand.logo:hover {
+  color: #F6D400
+}
+
+.back {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #5e5e5e;
+  transition: calc(0.2s);
+}
+
+.back:hover {
+  transform: scale(1.2);
+  color: #F6D400;
+}
+
+.navbar {
+  justify-content: end;
+  text-align: end;
+  align-items: end;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.card {
+  border: none;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-top: 2%;
+}
+
+/* Keyframes for the fadeIn animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.info h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Personal/ Representative Buttons -------------*/
+.radio-buttons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.custom-radio input {
+  display: none;
+}
+#personal, #authorized{
+  display: none;
+}
+
+.radio-btn {
+  width: 210px;
+  height: 80px;
+  border: 1px solid transparent;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  cursor: pointer;
+  transition: calc(0.1s);
+}
+.radio-btn:hover{
+  transform: scale(0.9);
+}
+
+.radio-btn>i {
+  color: rgb(0, 204, 255);
+  display: none;
+  font-size: 20px;
+  position: absolute;
+  top: 9px;
+  left: 10%;
+  transform: translateX(-50%) scale(1);
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.radio-btn .personal-icon {
+  width: 210px;
+  height: 80px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-btn .personal-icon i {
+  color: rgb(0, 0, 0);
+  line-height: 40px;
+  font-size: 20px;
+}
+.custom-radio input[type="radio"]:checked + .radio-btn .personal-icon i.fa-user {
+  color:#00008B;
+}
+.custom-radio input[type="radio"]:checked + .radio-btn .personal-icon i.fa-user-group {
+  color: #00008B;
+}
+
+.radio-btn .personal-icon h3 {
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.custom-radio input:checked+.radio-btn {
+  border: 2px solid #00008B;
+}
+
+.custom-radio input:checked+.radio-btn>i {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* end -------------*/
+#dropDownNo {
+  text-align: justify;
+}
+.error-placeholder {
+  color: #dc3545;
+  font-size: 80%;
+}
+label {
+  font-weight: 500;
+}
+.borders {
+  margin-bottom: 2rem;
+  border-radius: .5rem;
+  border: 2px solid #040f62;
+  border-top: 20px solid #040f62;
+  padding: 2%;
+}
+.image img {
+  width: 100px;
+  z-index: 1;
+  margin-top: -300px;
+}
+.tab {
+  display: none;
+  padding: 2%;
+  padding-bottom: 1%;
+}
+.car {
+  position: relative;
+  animation: heartbeat 4s infinite;
+  z-index: 0;
+  margin-left: 2rem;
+}
+.car img{
+  width: 10rem;
+    margin-bottom: -11rem;
+    margin-top: -9.5rem;
+    
+  filter: drop-shadow(0 0 0.2rem rgb(252, 252, 252));
+}
+
+.blueFill {
+  background-color: rgba(21, 24, 72, 0.836);
+}
+@keyframes heartbeat {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: scaleY(1);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scaleY(1.05);
+  }
+}
+.btn{
+  margin-right: 1rem;
+  transition: calc(0.2s);
+}
+.btn-dark {
+  font-size: 1.2rem;
+  background-color: #120044;
+  font-weight: bold;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ transition: calc(0.2s);
+}
+.btn-info {
+  font-size: 1.3rem;
+  background-color: rgb(255, 217, 0);
+  color: #120044;
+  border: none;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: calc(0.2s);
+}
+.btn:hover{
+  transform: scale(1.1);
+}
+h5{
+  opacity: 0.5;
+  text-align: start;
+  padding-bottom: 2%;
+}
+
+.step {
+  position: relative;
+  height: 3.5rem;
+  width: 3.5rem;
+  background: linear-gradient(to right, #F6D400 20%, #efe08d 40%, #ede39f 60%, #F6D400 80%);
+	background-size: 200% auto;
+	-webkit-animation: effect 1s linear infinite;
+	animation: effect 1s linear infinite;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 1;
+  color: #5a565a;
+  margin: 1.5rem 5.2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  animation: effect 1s linear infinite;
+  filter: drop-shadow(2px 4px 8px #345073);
+}
+@keyframes effect {
+  to {
+    background-position: -200% center;
+  }}
+.active {
+  font-weight: 900;
+  background: linear-gradient(to right, #F6D400 20%, #f7e47b 40%, #ede39f 60%, #F6D400 80%);
+	background-size: 200% auto;
+  color: rgb(0, 0, 0);
+}
+@keyframes beatEffect {
+  0% {
+    background-size: 200% auto;
+    transform: scale(1);
+  }
+  50% {
+    background-size: 250% auto;
+    transform: scale(1.3);
+  }
+  100% {
+    background-size: 200% auto;
+    transform: scale(1);
+  }}
+.step.finish{
+  color: #000000;
+  font-weight: bolder;
+}
+ .step.active:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -11rem;
+  height: 0.8rem;
+  width: 11.1rem;
+} 
+.step.finish:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -11rem;
+  height: 0.8rem;
+  width: 11.1rem;
+  background: linear-gradient(to right, #F6D400 20%, #efd74d 40%, #ede39f 60%, #F6D400 80%);
+	background-size: 200% auto;
+	-webkit-animation: effect 1s linear infinite;
+	animation: effect 1s linear infinite;
+} 
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -11rem;
+  height: 0.8rem;
+  width: 11.1rem;
+  filter: none;
+  background: linear-gradient(to right, #F6D400 20%, #efd74d 40%, #ede39f 60%, #F6D400 80%);
+	background-size: 200% auto;
+	-webkit-animation: effect 1s linear infinite;
+	animation: effect 1s linear infinite;
+}
+.step.finish.active{
+  color: #000;
+}
+.form-control {
+  border-color: rgba(60, 60, 60, 0.479) !important;
+}
+
+.row{
+  padding-bottom: 1%;
+}
+.bordered{
+  border: 1px solid rgb(0, 0, 97);
+  border-top: 10px solid rgb(0, 0, 89);
+  padding: 2%;
+  border-radius: .5rem;
+}
+.check{
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+.check label{
+  font-size: 1.5rem;
+}
+.checkbox-container input[type="checkbox"] {
+  height: 1.3rem;
+  width: 1.3rem;
+  align-items: center;
+  margin-right: .2rem;
+}
+.restiction-label{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+#mail{
+  border: 2px solid rgb(0, 0, 0);
+}
+label .is-valid {
+  color: #000;
+}
+@media (max-width: 320px) {
+  .step{
+    margin: 1rem 0.8rem;
+  }
+  .step:not(:last-child)::after {
+    right: -3rem;
+    height: 0.5rem;
+    width: 3rem;
+  }
+  .step.active:not(:last-child)::after {
+    right: -3rem;
+    height: 0.5rem;
+    width: 3.5rem;
+  }
+  .car img{
+    width: 5rem;
+    margin-left: 0;
+    margin-bottom: -11.5rem;
+    margin-top: -9.5rem;
+  }
+  .car{
+    margin-left: -.8rem;
+  }
+}
+@media (max-width: 425px) {
+  .step{
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  .step:not(:last-child)::after {
+    right: -5rem;
+    height: 0.5rem;
+    width: 5rem;
+  }
+  .step.active:not(:last-child)::after {
+    right: -5rem;
+    height: 0.5rem;
+    width: 5rem;
+  }
+  .step{
+    margin: 1rem 1rem;
+  }
+  .car img{
+    width: 5rem;
+    margin-left: 0;
+    margin-bottom: -11.5rem;
+    margin-top: -9.5rem;
+  }
+  .car{
+    margin-left: 0;
+  }
+}
+@media (max-width: 375px) {
+  .step{
+    margin: 1rem 1.2rem;
+  }
+  .step:not(:last-child)::after {
+    right: -3.9rem;
+    height: 0.5rem;
+    width: 4rem;
+  }
+  .step.active:not(:last-child)::after {
+    right: -3.9rem;
+    height: 0.5rem;
+    width: 4rem;
+  }
+  .car img{
+    width: 5rem;
+    margin-left: 0;
+    margin-bottom: -11.5rem;
+    margin-top: -9.5rem;
+  }
+  .car{
+    margin-left: -.5rem;
+  }
+}
+ @media  (min-width: 768px) {
+  .step{
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+  }
+  .step:not(:last-child)::after {
+    right: -8rem;
+    height: 0.5rem;
+    width: 8rem;
+  }
+  .step.active:not(:last-child)::after {
+    right: -8rem;
+    height: 0.5rem;
+    width: 8rem;
+  }
+  .step{
+    margin: 1rem 2.8rem;
+  }
+  .car img{
+    width: 7rem;
+    margin-left: 0;
+    margin-bottom: -11.5rem;
+    margin-top: -9.5rem;
+  }
+  .car{
+    margin-left: 0;
+  }
+}
+@media  (min-width: 1024px) {
+  .step {
+    position: relative;
+    height: 3.5rem;
+    width: 3.5rem;
+    background: linear-gradient(to right, #F6D400 20%, #efe08d 40%, #ede39f 60%, #F6D400 80%);
+    background-size: 200% auto;
+    -webkit-animation: effect 1s linear infinite;
+    animation: effect 1s linear infinite;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 1;
+    color: #5a565a;
+    margin: 1.5rem 7rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    animation: effect 1s linear infinite;
+  }
+
+  .step.finish{
+    color: #000000;
+    font-weight: bolder;
+  }
+   .step.active:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -15rem;
+    height: 0.8rem;
+    width: 15.1rem;
+  } 
+  .step.finish:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -11rem;
+    height: 0.8rem;
+    width: 11.1rem;
+    background: linear-gradient(to right, #F6D400 20%, #efd74d 40%, #ede39f 60%, #F6D400 80%);
+    background-size: 200% auto;
+    -webkit-animation: effect 1s linear infinite;
+    animation: effect 1s linear infinite;
+  } 
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -15rem;
+    height: 0.8rem;
+    width: 15.1rem;
+    background-color: #ffffff;
+    filter: none;
+  } 
+  .car {
+    position: relative;
+    animation: heartbeat 4s infinite;
+    z-index: 0;
+    margin-left: 1rem;
+  }
+  .car img{
+    width: 10rem;
+      margin-bottom: -11rem;
+      margin-top: -9.5rem;
+      margin-left: 2rem;
+    filter: drop-shadow(0 0 0.2rem rgb(252, 252, 252));
+  }
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+.custom-dialog .larger-text {
+  font-size: 2rem; 
+  color: #000000;
+}
+.number{
+  color: #040e91;
+  font-weight: bold;
+}
+
+.license-check {
+  width: 1.5rem;
+   height: 1.5rem;
+}
+.numlabel {
+  margin-left: 10%;
+  font-size: 2rem;
+}
+.restiction-label  {
+  font-weight: 700;
+  color: rgb(80, 80, 80);
+}
+
+.bordered1{
+  padding: 2%;
+  border-radius: .5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+
+#activation {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding-left: 1.5rem;
+  animation: typing 10s steps(100) infinite; /* Repeat the animation infinitely */
+}
+
+@keyframes blink-caret {
+  from, to { border-right: 2px solid red; }
+  50% { border-right: 2px solid rgba(255, 0, 0, 0.75); }
+}
+
+/* Additional keyframes for blinking caret */
+@keyframes blink {
+  from, to { border-right: 2px solid red; }
+  50% { border-right: 2px solid rgba(255, 0, 0, 0.75); }
+}
+
+/* Apply the blink animation to the #activation element */
+#activation::after {
+  content: '|';
+  display: inline-block;
+  vertical-align: bottom;
+  animation: blink 10s; /* Repeat the blink animation infinitely every 1 second */
+}
+@media (max-width: 760px) {
+  .step{
+    display: none;
+  }
+  .car{
+    display: none;
+  }
+}
+/* .btn-next{
+  background-color: #040e91;
+  color: #fff;
+  font-size: x-large;
+  font-weight: bold;
+}
+.btn-next:hover{
+  color:#efd74d ;
+} */
+/* .btn-previoust{
+  background-color:#efd74d;
+  color: #000000;
+  font-size: x-large;
+  font-weight: bold;
+} */

@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.cdnfonts.com/css/infinite-justice" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style/pidp_form.css">
+  <link rel="icon" href="img/logo.png" type="image/png">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <title>Motorcycle Form</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a class="back" href="javascript:void(0);" onclick="confirmAction()"><i class="fa-solid fa-house"></i></a>
+  </nav>
+  <div class="container pb-5 justify-content-center">
+    <div id="car" class="car"><img src="img\blue1.png" alt=""></div>
+    <div class="row" style="z-index: 0;">
+      <div id="stepsContainer">
+        <span class="step">1</span>
+        <span class="step">2</span>
+        <span class="step">3</span>
+        <span class="step">4</span>
+        <span class="step">5</span>
+      </div>
+    </div>
+    <div class="card justify-content-center">
+      <div class="card-body">
+        <form id="regForm" action="/action_page.php" >
+          <p  id="activation" style="color: rgb(255, 0, 0); padding-left: 1.5rem; font-weight: 500;">Free emergency roadside and towing services can be availed of only after 7 days from the date of activation of membership.</p>
+          <input type="hidden" name="form_number" id="form_id_number">
+          <h2 class="text-center mt-3">MOTORCYCLE MEMBERSHIP APPLICATION FORM</h2>
+          <div class="tab" id="tab1"> <!----STEP 1----->
+            <div class="justify-content-right">
+              <h5>Step 1 of 5 - Personal information</h5>
+            </div>
+            <div class="row pt-3 justify-content-cnter">
+              <div class="col-md-3"></div>
+              <div class="col-md-3 text-center">
+                <div class="form-group" id="personalicon">
+                  <label for="personal" class="custom-radio">
+                    <input type="radio" name="option" id="personal" onclick="showContent1()"
+                      class="form-control custom-control custom-radio">
+                    <span class="radio-btn"><i class="fa-solid fa-circle-check radio-check"></i>
+                      <div class="personal-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <h3 class="radio-label">Personal</h3>
+                      </div>
+                    </span>
+                  </label>
+                </div>
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="form-group" id="authorizedicon">
+                  <label for="representative" class="custom-radio">
+                    <input type="radio" name="option" id="representative" onclick="showContent()" class="form-control"   >
+                    <span class="radio-btn"><i class="fa-solid fa-circle-check radio-check"></i>
+                      <div class="personal-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h3 class="radio-label">Authorized Representative</h3>
+                    </span>
+                </div>
+                </label>
+                <div class="invalid-feedback"></div>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+          </div>
+          <div id="content1" style="display: none;">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="repname" class="label"> Representative Name</label>
+                  <input type="text" class="form-control text-input" id="repname" autocomplete="on" placeholder=" Enter full name"   >
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="repnum" class=" label">Representative Contact No.</label>
+                  <input type="number" class="form-control text-input" id="repnum" autocomplete="on" placeholder=" Enter contact no.">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="repnum" class=" label">Representative Address</label>
+                  <input type="text" class="form-control text-input" id="repadd" autocomplete="on"
+                    placeholder=" Enter contact no.">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="ptype" class="Select-label">Plan Type</label>
+              <Select name="ptype" class="form-control  custom-select" id="ptype"   >
+                <option value="" selected disabled> Select plan type.</option>
+                <option value="PACKAGE1">ANNUAL FEE(MOTORCYCLE PACKAGE 1) - ₱ 600</option>
+                <option value="PACKAGE2">ANNUAL FEE(MOTORCYCLE PACKAGE 2 NEW RATE) - ₱ 900</option>
+                <option value="PACKAGE3">ANNUAL FEE(MOTORCYCLE PACKAGE 3 NEW RATE) - ₱ 1500</option>
+                <option value="PACKAGE4">ANNUAL FEE(MOTORCYCLE PACKAGE 4 NEW RATE) - ₱ 2550</option>
+              </Select>
+            </div>
+          </div>
+
+          <div class=" row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="title_membership" class="Select-label">Title</label>
+                <Select name="title_membership" class="form-control" id="title_membership"   >
+                  <option value="" selected disabled> Select title.</option>
+                  <option value="MR">MR</option>
+                  <option value="MS">MS</option>
+                  <option value="MRS">MRS</option>
+                  <option value="ATTY">ATTY</option>
+                  <option value="DR">DR</option>
+                  <option value="ENGR">ENGR</option>
+                </Select>
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" placeholder="Enter First Name" name="fname" id="fname"   >
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="mname">Middle Name</label>
+                <input type="text" class="form-control" placeholder="Enter Middle Name" name="mname" id="mname"   >
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" placeholder="Enter Last Name" name="lname" id="lname"   >
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="birth_month" class="Select-label">Birth Month</label>
+                <Select name="birth_month" class="form-control " id="birth_month"   >
+                  <option value="" selected disabled> Select birth month.</option>
+                  <option value="JANUARY">JANUARY</option>
+                  <option value="FEBRUARY">FEBRUARY</option>
+                  <option value="MARCH">MARCH</option>
+                  <option value="APRIL">APRIL</option>
+                  <option value="MAY">MAY</option>
+                  <option value="JUNE">JUNE</option>
+                  <option value="JULY">JULY</option>
+                  <option value="AUGUST">AUGUST</option>
+                  <option value="SEPTEMBER">SEPTEMBER</option>
+                  <option value="OCTOBER">OCTOBER</option>
+                  <option value="NOVEMBER">NOVEMBER</option>
+                  <option value="DECEMBER">DECEMBER</option>
+                </Select>
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="bday" class="label">Birth Day</label>
+                <input type="number" class="text-input form-control" id="bday" autocomplete="on" min="1" max="31" placeholder="(1-31)"   >
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="byear" class="label">Birth Year</label>
+                <input type="number" class="text-input form-control" id="byear" autocomplete="on" min="1920" max="2023" placeholder="(YYYY)"   >
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="bplace" class="label">Birth Place</label>
+                <input type="text" class="text-input form-control" id="bplace" autocomplete="on" placeholder=" Enter birth place"   >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="gender_membership">Gender</label>
+                <Select name="gender_membership" class="Select-input form-control" id="gender_membership"   >
+                  <option value="" selected disabled> Select a gender.</option>
+                  <option value="FEMALE">FEMALE</option>
+                  <option value="MALE">MALE</option>
+                </Select>
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="occupation" class="label">Occupation</label>
+                <input type="text" class="text-input form-control" id="occupation" autocomplete="on" placeholder=" Enter occupation"   >
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="status_membership" class="select-label">Status</label>
+                <select name="status_membership" class="select-input form-control" id="status_membership"   >
+                  <option value="" selected disabled>Please select civil status.</option>
+                  <option value="SINGLE">SINGLE</option>
+                  <option value="MARRIED">MARRIED</option>
+                  <option value="WIDOWED">WIDOWED</option>
+                </select>
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="ctzen_membership" class="select-label">Citizenship</label>
+                <select name="ctzen_membership" class="select-input form-control" id="ctzen_membership"   >
+                  <option value="" selected disabled>Select citizenship.</option>
+                  <option value="filipino">FILIPINO</option>
+                  <option value="foreigner">FOREIGNER</option>
+                </select>
+                <div class="invalid-feedback"></div>
+              </div>
+            </div>
+          </div>
+          <div id="add_info" style="display: none;">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="nationality" class="label">Nationality</label>
+                <input type="text" class="text-input form-control" id="nationality" autocomplete="on"
+                  placeholder=" Enter nationality">
+              </div>
+              <div class="col-md-6">
+                <label for="acr" class="label">ACR no.</label>
+                <input type="text" class="text-input form-control" id="acr" autocomplete="on"
+                  placeholder=" Enter ACR No.">
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="tab" id="tab2"> <!----STEP 2----->
+        <div class="justify-content-right">
+          <h5>Step 2 of 5 - Contact information</h5>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="mail" class="Select-label" style=" font-weight: bolder;">Mailing Address</label>
+            <select name="mailing-address" class="custom-select form-control " id="mail"   >
+              <option disabled selected value="">Select Mailing Address.</option>
+              <option value="home" id="home">HOME ADDRESS</option>
+              <option value="office" id="office">OFFICE ADDRESS</option>
+            </select>
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="bordered">
+          <div class="row">
+            <div class="col-md-12">
+              <label class="label-home">Home Address</label>
+            </div>
+            <div class="col-md-4">
+              <label for="street" class="label">Building No./Street</label>
+              <input type="text" class="text-input form-control" id="street" autocomplete="on"
+                placeholder=" Enter building no./street"   >
+            </div>
+            <div class="col-md-4">
+              <label for="town" class="label">Barangay/Town</label>
+              <input type="text" class="text-input form-control" id="town" autocomplete="on"
+                placeholder=" Enter barangay/town"   >
+            </div>
+            <div class="col-md-4">
+              <label for="city" class="label">City/Municipality</label>
+              <input type="text" class="text-input form-control" id="city" autocomplete="on"
+                placeholder=" Enter city/municipality"   >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <label for="province" class="label">Province</label>
+              <input type="text" class="text-input form-control" id="province" autocomplete="on"
+                placeholder=" Enter province"   >
+            </div>
+            <div class="col-md-4">
+              <label for="zcode" class="label">ZIP Code</label>
+              <input type="number" class="text-input form-control" id="zcode" autocomplete="on"
+                placeholder=" Enter ZIP code"   >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="pnum2" class="label">Mobile No.</label>
+              <input type="text" class="text-input form-control" id="pnum2" autocomplete="on" placeholder="Enter mobile no." oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)" maxlength="11"   >
+            </div>
+            <div class="col-md-3">
+              <label for="pnum3" class="label">Alternate Mobile No.</label>
+              <input type="number" pattern="[0-9]{11}" class="text-input form-control" id="pnum3" autocomplete="on"
+                placeholder=" Enter alternate mobile no."   >
+            </div>
+            <div class="col-md-3">
+              <label for="email1" class="label">Email Address</label>
+              <input type="email" class="text-input form-control" id="email1" autocomplete="on"
+                placeholder=" Enter email address"   >
+            </div>
+            <div class="col-md-3">
+              <label for="email2" class="label">Alternate Email Address</label>
+              <input type="email" class="text-input form-control" id="email2" autocomplete="on"
+                placeholder=" Enter alternate email address"   >
+            </div>
+          </div>
+        </div>
+        <div class="pt-5" id="officeAddress" style="display: none;">
+          <div class="bordered">
+            <div class="row">
+              <div class="col-md-12">
+                <label class="label-home">Office Address Address</label>
+              </div>
+              <div class="col-md-4">
+                <label for="street" class="label">Building No./Street</label>
+                <input type="text" class="text-input form-control" id="street1" autocomplete="on"
+                  placeholder=" Enter building no./street">
+              </div>
+              <div class="col-md-4">
+                <label for="town" class="label">Barangay/Town</label>
+                <input type="text" class="text-input form-control" id="town1" autocomplete="on"
+                  placeholder=" Enter barangay/town">
+              </div>
+              <div class="col-md-4">
+                <label for="city" class="label">City/Municipality</label>
+                <input type="text" class="text-input form-control" id="city1" autocomplete="on"
+                  placeholder=" Enter city/municipality">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="province" class="label">Province</label>
+                <input type="text" class="text-input form-control" id="province1" autocomplete="on"
+                  placeholder=" Enter province"   >
+              </div>
+              <div class="col-md-6">
+                <label for="zcode" class="label">ZIP Code</label>
+                <input type="number" class="text-input form-control" id="zcode1" autocomplete="on"
+                  placeholder=" Enter ZIP code">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-9">
+                <label for="comname" class="label">Company Name</label>
+                <input type="text" class="text-input form-control" id="comname" autocomplete="on"
+                  placeholder=" Enter alternate mobile no.">
+              </div>
+              <div class="col-md-3">
+                <label for="telnumOffice" class="label">Telephone No.</label>
+                <input type="number" class="text-input form-control" id="telnumOffice" autocomplete="on"
+                  placeholder=" Enter email address">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab" id="tab3"> <!----STEP 3----->
+        <div class="justify-content-right">
+          <h5>Step 3 of 5 (Insured or Beneficiaries)</h5>
+        </div>
+        <div class="text">
+          <p class="p1"><b>Note: </b>If Married, OTHER INSURED pertains to spouse not more than 60
+            years old &
+            unmarried
+            children
+            between ages 1-23 years.</p>
+          <p class="p2">If Single, OTHER INSURED refers to parents below 60 years old and unmarried
+            brothers &
+            sisters
+            between ages
+            1-23 years.</p>
+        </div>
+        <div class="insured1">
+
+          <div class="insured0 bordered">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="insuredBenefiaries1" class="Select-label">Insured or Beneficiaries</label>
+                  <select name="insuredBenefiaries" class="form-control " id="insuredBenefiaries1"   >
+                    <option value="" selected disabled>Select Insured or Beneficiaries.</option>
+                    <option value="insured">INSURED</option>
+                    <option value="beneficiaries">BENEFICIARIES</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="insuredName1">Name</label>
+                  <input type="text" class="form-control" placeholder="Enter Full Name" name="insuredName"
+                    id="insuredName1"   >
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="relationship1">Relationship</label>
+                  <input type="text" class="form-control" placeholder="Enter Relationship" name="relationship"
+                    id="relationship1"   >
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="insuredBirthDate1">Birth Date</label>
+                  <input type="date" class="form-control" placeholder="Enter Birth Date" name="insuredBirthDate"
+                    id="insuredBirthDate1"   >
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--insured 2------------------------------------------------------------------------------------------------->
+          <div id="add_insured1">
+            <div class="insured2 bordered mt-3" style="display: none; width: 100%;">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="insuredBenefiaries2" class="Select-label">Insured or Beneficiaries</label>
+                    <select name="insuredBenefiaries2" class="form-control " id="insuredBenefiaries2">
+                      <option value="" selected disabled>Select Insured or Beneficiaries.</option>
+                      <option value="insured">INSURED</option>
+                      <option value="beneficiaries">BENEFICIARIES</option>
+                    </select>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="insuredName2">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Full Name" name="insuredName"
+                      id="insuredName2">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="relationship2">Relationship</label>
+                    <input type="text" class="form-control" placeholder="Enter Relationship" name="relationship"
+                      id="relationship2">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="insuredBirthDate2">Birth Date</label>
+                    <input type="date" class="form-control" placeholder="Enter Birth Date" name="insuredBirthDate"
+                      id="insuredBirthDate2">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button type="button" onclick="hidex()" class="btn-danger" id="hide1"
+                  style="margin: auto; padding: .3rem 1.4rem; border-radius: .3rem;">Remove this insured
+                  information</button>
+              </div>
+            </div>
+            <button type="button" onclick="show7()" class="btn-primary mt-3" id="add1"
+              style="padding: .3rem 1.4rem; border-radius: .3rem;">+ Add another insured</button>
+          </div>
+
+          <!--insured 3------------------------------------------------------------------------------------------------->
+          <div id="add_insured2">
+            <div class="insured3 bordered mt-3" style="display: none; width: 100%;">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="insuredBenefiaries3" class="Select-label">Insured or Beneficiaries</label>
+                    <select name="insuredBenefiaries3" class="form-control " id="insuredBenefiaries3">
+                      <option value="" selected disabled>Select Insured or Beneficiaries.</option>
+                      <option value="insured">INSURED</option>
+                      <option value="beneficiaries">BENEFICIARIES</option>
+                    </select>
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="insuredName3">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Full Name" name="insuredName"
+                      id="insuredName3">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="relationship3">Relationship</label>
+                    <input type="text" class="form-control" placeholder="Enter Relationship" name="relationship"
+                      id="relationship3">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="insuredBirthDate3">Birth Date</label>
+                    <input type="date" class="form-control" placeholder="Enter Birth Date" name="insuredBirthDate"
+                      id="insuredBirthDate3">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button type="button" onclick="hidey()" class="btn-danger" id="hide2"
+                  style="margin: auto; padding: .3rem 1.4rem; border-radius: .3rem;">Remove this insured
+                  information</button>
+              </div>
+            </div>
+
+            <button type="button" onclick="show8()" class="btn-primary mt-3" id="add2"
+              style="display: none; padding: .3rem 1.4rem; border-radius: .3rem;"">+ Add another
+                insured</button>
+    
+            </div>
+          </div>
+
+
+          </div>
+
+          <div class="tab" id="tab4"> <!----STEP 4----->
+            <div class="justify-content-right">
+              <h5>Step 4 of 5 - Vehicle Details </h5>
+            </div>
+            <div class="bordered">
+              <div class="row">
+                <div class="col-md-4 table1">
+                  <div class="check d-flex align-items-center p-3 bordered1">
+                    <input type="checkbox" id="csticker" value="NO"
+                      style="width: 1.5rem; height: 1.5rem; margin-right: 10%; margin-bottom: 3%;" onchange="updateLabel()">
+                    <label class="label" for="csticker" style="font-size: medium;">Is Conduction Sticker Available?</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="platenum" class="label">Plate No.</label>
+                  <input type="text" class="text-input form-control" id="platenum" autocomplete="on"
+                    placeholder="Enter plate no.">
+                </div>
+                <div class="col-md-4">
+                  <label for="model" class="label">Model</label>
+                  <input type="text" class="text-input form-control" id="model" autocomplete="on"
+                    placeholder=" Enter car model">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="make" class="label">Make</label>
+                  <input type="text" class="text-input form-control" id="make" autocomplete="on"
+                    placeholder=" Enter car make"   >
+                </div>
+                <div class="col-md-4">
+                  <label for="color" class="label">Color</label>
+                  <input type="text" class="text-input form-control" id="color" autocomplete="on"
+                    placeholder=" Enter car color."   >
+                </div>
+                <div class="col-md-4">
+                  <label for="ymodel" class="label">Year Model</label>
+                  <input type="text" class="text-input form-control" id="ymodel" autocomplete="on"
+                    placeholder=" Enter year model"   >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="ftype" class="Select-label">Fuel Type</label>
+                  <Select name="ftype" class="form-control  custom-select" id="ftype"   >
+                    <option selected disabled value="">Select fuel type</option>
+                    <option value="GAS">GAS</option>
+                    <option value="DIESEL">DIESEL</option>
+                    <option value="ELECTRIC">ELECTRIC</option>
+                  </Select>
+                </div>
+                <div class="col-md-4">
+                  <label for="ttype" class="Select-label">Transmission Type</label>
+                  <Select name="ttype" class="Select-input form-control" id="ttype"   >
+                    <option selected disabled value="">Select transmission type</option>
+                    <option value="AUTOMATIC">AUTOMATIC</option>
+                    <option value="MANUAL">MANUAL</option>
+                  </Select>
+                </div>
+              </div>
+            </div>
+    
+            <div class="row col-md-12 p-2">
+              <button class=" btn-primary mt-3" type="button" onclick="showVehicle2()" id="addVehicle"
+                style="padding: .5rem 1.4rem; border-radius: .3rem;">+ Add another
+                vehicle</button>
+            </div>
+            <div class="vehicle2 bordered" id="vehicle2" style="display: none;">
+              <div class="row">
+                <div class="col-md-4 table1">
+                  <div class="check d-flex align-items-center p-3 bordered1">
+                    <input type="checkbox" id="csticker1" value="NO"
+                      style="width: 1.5rem; height: 1.5rem; margin-right: 10%; margin-bottom: 3%;"
+                      onchange="updateLabel1()">
+                    <label class="label" for="csticker1" style="font-size: medium;">Is Conduction Sticker Available?</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="platenum1" class="label">Plate No.</label>
+                  <input type="text" class="text-input form-control" id="platenum1" autocomplete="on"
+                    placeholder="Enter plate no.">
+                </div>
+                <div class="col-md-4">
+                  <label for="model" class="label">Model</label>
+                  <input type="text" class="text-input form-control" id="model1" autocomplete="on"
+                    placeholder=" Enter car model">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="make" class="label">Make</label>
+                  <input type="text" class="text-input form-control" id="make1" autocomplete="on"
+                    placeholder=" Enter car make">
+                </div>
+                <div class="col-md-4">
+                  <label for="color" class="label">Color</label>
+                  <input type="text" class="text-input form-control" id="color1" autocomplete="on"
+                    placeholder=" Enter car color.">
+                </div>
+                <div class="col-md-4">
+                  <label for="ymodel" class="label">Year Model</label>
+                  <input type="text" class="text-input form-control" id="ymodel1" autocomplete="on"
+                    placeholder=" Enter year model">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="ftype" class="Select-label">Fuel Type</label>
+                  <Select name="ftype" class="form-control  custom-select" id="ftype1">
+                    <option value="" selected disabled>Select fuel type</option>
+                    <option value="GAS">GAS</option>
+                    <option value="DIESEL">DIESEL</option>
+                    <option value="ELECTRIC">ELECTRIC</option>
+                  </Select>
+                </div>
+                <div class="col-md-4">
+                  <label for="ttype" class="Select-label">Transmission Type</label>
+                  <Select name="ttype" class="form-control  custom-select" id="ttype1">
+                    <option value="" selected disabled>Select transmission type</option>
+                    <option value="AUTOMATIC">AUTOMATIC</option>
+                    <option value="MANUAL">MANUAL</option>
+                  </Select>
+                </div>
+              </div>
+              <div class="row col-md-12 justify-content-center ml-1 mt-3">
+                <button class="btn btn-danger" type="button" onclick="hideVehicle2()" id="removebutton"
+                  style="padding: .5rem 1.4rem; border-radius: .3rem;">Remove this
+                  vehicle
+                  information</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab" id="tab5"> <!----STEP 5----->
+            <div class="justify-content-right">
+              <h5>Step 5 of 5 - Information summary</h5>
+            </div>
+            <div class="row col-md-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th colspan="5" class="text-center blueFill text-light">PERSONAL INFORMATION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="echoTitle"></td>
+                    <td id="echoLastName"></td>
+                    <td id="echoFirstName"></td>
+                    <td id="echoMiddleName"></td>
+                  </tr>
+                  <tr>
+                    <td id="echoBirthdate"></td>
+                    <td colspan="2" id="echoBirthPlace"></td>
+                    <td id="echoGender"></td>
+                  </tr>
+                  <tr>
+                    <td id="echoCitizenship"></td>
+                    <td id="echoStatus"></td>
+                    <td colspan="2" id="echoOccupation"></td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th colspan="4" class="text-center blueFill text-light">CONTACT INFORMATION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4" id="echoHomeAddress"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" id="echocomname"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" id="echoOfficeAddress"></td>
+                  </tr>
+                  <tr>
+                    <td id="echoHomeMobileNo"></td>
+                    <td id="echoOfficeMobileNo"></td>
+                    <td colspan="2" id="echoMailingPreference"></td>
+                  </tr>
+                  <tr>
+                    <td id="echomobilenum"></td>
+                    <td id="echoalternatemobilenum"></td>
+                    <td id="echoemailadd"></td>
+                    <td id="echoalternateemailadd"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th colspan="4" class="text-center blueFill text-light">REPRESENTATIVE INFORMATION</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="echorepname"></td>
+                    <td id="echorepcontact"></td>
+                    <td id="echorepaddress"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th colspan="5" class="text-center blueFill text-light">VEHICLE DETAILS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="2" style="text-align: center; vertical-align: middle;">
+                      <h3 class="text-center">1st</h3>
+                    </td>
+                    <td id="echoconduction"></td>
+                    <td id="echoplatenum"></td>
+                    <td id="echomake"></td>
+                    <td id="echomodel"></td>
+                  </tr>
+                  <tr>
+                    <td id="echoymodel"></td>
+                    <td id="echocolor"></td>
+                    <td id="echoftype"></td>
+                    <td id="echottype"></td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2" style="text-align: center; vertical-align: middle;">
+                      <h3 class="text-center">2nd</h3>
+                    </td>
+                    <td id="echoconduction1"></td>
+                    <td id="echoplatenum1"></td>
+                    <td id="echomake1"></td>
+                    <td id="echomodel1"></td>
+                  </tr>
+                  <tr>
+                    <td id="echoymodel1"></td>
+                    <td id="echocolor1"></td>
+                    <td id="echoftype1"></td>
+                    <td id="echottype1"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="row" style="text-align: justify;">
+                <div class="col-12">
+                  <div class="formCheck d-flex">
+                    <input class="check-input" type="checkbox" id="summarycheck1">
+                    <p class="form-check-label p-2" for="summarycheck1">I would like to receive AQ Magazine via email.
+                    </p>
+                  </div>
+                  <div class="formCheck d-flex">
+                    <input class="check-input" type="checkbox" id="summarycheck2"   >
+                    <p class="form-check-label p-2" for="summarycheck2">I confirm that the information given in this
+                      form is true, complete and accurate.</p>
+                  </div>
+                  <div class="formCheck d-flex">
+                    <input class="check-input" type="checkbox" id="summarycheck3"   >
+                    <p class="form-check-label p-2" for="summarycheck3">I agree to the Terms and Conditions of the
+                      Privacy Policy of the Automobile Association Philippines which I acknowledge that I have read and
+                      understood.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button class="btn btn-warning" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button class="btn btn-primary" type="submit" id="nextBtn"
+                onclick="nextPrev(1); generateRandomString()">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="script/motor_form.js"></script>
+</body>
+</html>
+
+
